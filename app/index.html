@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Legend — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div>
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; offline guide</p>
+    <h1>Leonida Legend</h1>
+    <p class="sub">The complete guide to all <strong>55 trophies</strong> — 1 platinum, 2 gold, 6 silver, 46 bronze, 28 hidden on PlayStation — with a roadmap to the platinum, every missable flagged, and a tracker that saves in your browser. Works with the network off.</p>
+  </div>
+  <div class="progress-card" id="progressCard">
+    <div class="big" id="progressBig">0 / 55</div>
+    <div class="bar"><div class="fill" id="progressFill"></div></div>
+    <p id="progressText">0 earned &middot; 55 to go</p>
+    <p class="grade-line" id="gradeLine">Platinum 0/1 &middot; Gold 0/2 &middot; Silver 0/6 &middot; Bronze 0/46</p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Views">
+  <button type="button" data-view="checklist" class="active">Checklist</button>
+  <button type="button" data-view="roadmap">Roadmap to Platinum</button>
+  <button type="button" data-view="missable">Missables</button>
+</nav>
+
+<section class="controls" aria-label="Tracker controls">
+  <label class="search">Search <input id="search" type="search" placeholder="Trophy, mission, activity… e.g. Shooting Range"></label>
+  <label>Kind
+    <select id="kind">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="missable">Missable</option>
+      <option value="collectibles">Collectibles</option>
+      <option value="activities">Activities</option>
+      <option value="online">Online</option>
+    </select>
+  </label>
+  <label>Grade
+    <select id="grade">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label class="check"><input id="hideEarned" type="checkbox"> Hide earned</label>
+  <label class="check spoiler"><input id="spoiler" type="checkbox"> Spoiler-safe: hide story names until earned</label>
+  <span class="spacer"></span>
+  <button id="export" type="button">Export progress</button>
+  <label class="import">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+  <button id="reset" type="button">Reset</button>
+</section>
+<p class="hint" id="resultCount"></p>
+
+<main>
+  <section id="roadmapView" hidden>
+    <h2>Roadmap to the platinum</h2>
+    <p>Five phases, built from the official descriptions. No story trophy is missable — chapters and missions can be replayed — but the 12 flagged missables need a specific setup (a partner, a place, a choice, a retry), so do them when the setup is in front of you.</p>
+    <ol class="phases" id="phases"></ol>
+  </section>
+
+  <section id="listView">
+    <div class="layout">
+      <div class="list-col">
+        <table>
+          <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>Kind</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <p class="empty" id="emptyMsg" hidden>No trophies match these filters. Try clearing the search or choosing “All kinds”.</p>
+      </div>
+      <aside class="detail" id="detail" aria-live="polite">
+        <p class="detail-empty">Select a trophy to read its guide and sources.</p>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Sources for every guide: the official trophy descriptions as published by PlayStation, via <a href="https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/">Exophase</a> and <a href="https://psnprofiles.com/trophies/43531-grand-theft-auto-vi">PSNProfiles</a>, plus Rockstar Games’ official GTA VI material at <a href="https://www.rockstargames.com/VI">rockstargames.com</a>. All guide text is written for this page in its own words; no guide text was copied. Where a method is inferred from the official description, the guide says so. No Rockstar logo, artwork or game screenshot is used. Progress is stored only in your browser (localStorage) and in the file you export.</p>
+  <p>Deep links: <code>?view=roadmap</code> · <code>?view=missable</code> · <code>?kind=collectibles</code> · <code>?spoiler=on</code> · <code>?trophy=17</code> · <code>?checked=2,3,15</code></p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
